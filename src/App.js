@@ -1,25 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Select from "react-select";
+
+const options = [
+  { value: 1, label: "Option 1" },
+  { value: 2, label: "Option 2" },
+  { value: 3, label: "Option 3" }
+];
 
 function App() {
+  const [option, setOption] = useState(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <label htmlFor="select">Selection</label>
+      <Select
+        inputId="select"
+        isClearable
+        isSearchable={false}
+        options={options}
+        value={options.find(option => option.value === option)}
+        onChange={option => setOption(option ? option.value : null)}
+      />
+      <p>{option ? `You selected option ${option}.` : "Select an option."}</p>
+    </>
   );
 }
 
