@@ -8,7 +8,7 @@ const options = [
 ];
 
 function App() {
-  const [selection, setSelection] = useState(null);
+  const [selection, setSelection] = useState(1);
 
   return (
     <>
@@ -18,7 +18,7 @@ function App() {
         isClearable
         isSearchable={false}
         options={options}
-        value={options.find(option => option.value === option)}
+        value={options.find(option => option.value === selection)}
         onChange={option => setSelection(option ? option.value : null)}
       />
       <p>
