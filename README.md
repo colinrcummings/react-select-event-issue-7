@@ -12,7 +12,7 @@ Minimal reproduction for [issue 7](https://github.com/romgain/react-select-event
 
 ## Test
 
-`$ npm run vaildate`
+`$ npm test`
 
 ## Boilerplate
 
