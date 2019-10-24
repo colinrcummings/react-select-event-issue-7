@@ -3,7 +3,7 @@ import React from "react";
 import selectEvent from "react-select-event";
 import App from "./App";
 
-it("clears single selection", async () => {
+it("handles selection, clear, selection", async () => {
   const { getByLabelText, getByText } = render(<App />);
   const select = getByLabelText("Selection");
   // no selection
