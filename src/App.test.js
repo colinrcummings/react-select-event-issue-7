@@ -12,9 +12,9 @@ it("handles selection, clear, selection", async () => {
   await selectEvent.select(select, "Option 1");
   getByText("You selected option 1.");
   // clear selection
-  selectEvent.clearFirst(select);
+  await selectEvent.clearFirst(select);
   await wait(() => expect(getByText("Select an option.")).toBeInTheDocument());
   // select option 2
-  await selectEvent.select(select, "Option 2"); // fails
+  await selectEvent.select(select, "Option 2");
   getByText("You selected option 2.");
 });
