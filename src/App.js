@@ -8,7 +8,7 @@ const options = [
 ];
 
 function App() {
-  const [option, setOption] = useState(null);
+  const [selection, setSelection] = useState(null);
 
   return (
     <>
@@ -19,9 +19,11 @@ function App() {
         isSearchable={false}
         options={options}
         value={options.find(option => option.value === option)}
-        onChange={option => setOption(option ? option.value : null)}
+        onChange={option => setSelection(option ? option.value : null)}
       />
-      <p>{option ? `You selected option ${option}.` : "Select an option."}</p>
+      <p>
+        {selection ? `You selected option ${selection}.` : "Select an option."}
+      </p>
     </>
   );
 }
